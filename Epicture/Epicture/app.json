@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Epicture",
+    "slug": "Epicture",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.Epitech.Epicture",
+      "versionCode": 1,
+      "config": {
+        "googleSignIn": {
+          "apiKey": "741002006929-dlcanb3d6gvrkhf15mk7qq0tel18uf9c.apps.googleusercontent.com"
+        }
+      }
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

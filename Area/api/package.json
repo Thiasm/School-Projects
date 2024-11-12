@@ -1,0 +1,38 @@
+{
+  "name": "area-api",
+  "version": "1.0.0",
+  "description": "API of the AREA",
+  "author": "Anton CAZALET / Thomas SENECHAL / Louis DELEPLACE / Alex GOYER / Mathias ROULLEAUX / Vivian REBOLLO",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "startDev": "nodemon --exec babel-node --inspect src/index.js",
+    "start": "babel-node src/index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "@microsoft/microsoft-graph-client": "^2.2.1",
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "googleapis": "^63.0.0",
+    "isomorphic-fetch": "^3.0.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "node-cron": "^2.0.3",
+    "nodemon": "^2.0.3",
+    "oauth": "^0.9.15",
+    "ovh": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

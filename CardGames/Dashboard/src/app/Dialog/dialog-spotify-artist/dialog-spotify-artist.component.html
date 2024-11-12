@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Edit Widget</h1>
+<div mat-dialog-content>
+  <p>Select a Music Style</p>
+  <mat-form-field>
+    <mat-label>Music Style</mat-label>
+    <mat-select (selectionChange)="changeSelect($event.value)">
+        <mat-option value="Rock">Rock</mat-option>
+        <mat-option value="Jazz">Jazz</mat-option>
+        <mat-option value="Rap">Rap</mat-option>
+        <mat-option value="House">House</mat-option>
+        <mat-option value="Metal">Metal</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div style="margin-left: 65px;" mat-dialog-actions>
+    <button mat-flat-button color="primary" [mat-dialog-close]="data.selection" cdkFocusInitial>Apply</button>
+</div>

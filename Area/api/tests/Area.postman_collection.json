@@ -1,0 +1,657 @@
+{
+	"info": {
+		"_postman_id": "8e23fe16-6412-4696-88c9-d76869977159",
+		"name": "Area",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "anton@antoncazalet.fr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aze",
+							"type": "text"
+						},
+						{
+							"key": "passwordConfirmation",
+							"value": "aze",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register (password != passwordConfirmation)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"    pm.response.to.have.jsonBody(\"error\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "anton@antoncazalet.fr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aze",
+							"type": "text"
+						},
+						{
+							"key": "passwordConfirmation",
+							"value": "azeaze",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register (User already registerd)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"    pm.response.to.have.jsonBody(\"error\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "anton@antoncazalet.fr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aze",
+							"type": "text"
+						},
+						{
+							"key": "passwordConfirmation",
+							"value": "aze",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "anton@antoncazalet.fr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aze",
+							"type": "text"
+						},
+						{
+							"key": "passwordConfirmation",
+							"value": "aze",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (Wrong account)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"        pm.response.to.have.jsonBody(\"error\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "anton@antoncazalet.fr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "azeaze",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Service Get ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/services/get",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"services",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actions Get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.have.jsonBody(\"error\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/actions/get",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"actions",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Auth services",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/auth/default_list",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"default_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add AREA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test Postman\",\n    \"description\": \"description\",\n    \"service\": {\n        \"parameters\": [\n            {\n                \"name\": \"Day\",\n                \"value\": \"11/05/2021\",\n                \"parameter_name\": \"$PARAM_1$\"\n            }\n        ],\n        \"service\": {\n            \"name\": \"Timer\",\n        \"description\": \"This service enable the time possibilities triggers\",\n        \"depends_on\": null,\n        \"id\": 0,\n            \"triggers\": [\n                {\n                    \"name\": \"Date\",\n                    \"description\": \"When the given day has come\",\n                    \"id\": 0,\n                    \"parameters\": [\n                        {\n                            \"name\": \"Day\",\n                            \"description\": \"Value of the day d/m/y (ex: \\\"11/03/2000\\\")\",\n                            \"value\": \"$PARAM_1$\",\n                            \"type\": \"string\",\n                            \"optional\": false\n                        }\n                    ],\n                    \"variables\": [\n                        {\n                            \"name\": \"Day\",\n                            \"description\": \"Value of the day d/m/y (ex: \\\"11/03/2000\\\")\",\n                            \"value\": \"$1$\",\n                            \"type\": \"string\"\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Time\",\n                    \"description\": \"When the given time has come\",\n                    \"id\": 1,\n                    \"parameters\": [\n                        {\n                            \"name\": \"Time\",\n                            \"description\": \"Value of the time h:m (ex: \\\"12:31\\\")\",\n                            \"value\": \"$PARAM_1$\",\n                            \"type\": \"string\",\n                            \"optional\": false\n                        }\n                    ],\n                    \"variables\": [\n                        {\n                            \"name\": \"Time\",\n                            \"description\": \"Value of the day d/m/y (ex: \\\"11/03/2000\\\")\",\n                            \"value\": \"$1$\",\n                            \"type\": \"string\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"sub_service\": {\n            \"name\": \"Date\",\n            \"description\": \"When the given day has come\",\n            \"id\": 0,\n            \"parameters\": [\n                {\n                    \"name\": \"Day\",\n                    \"description\": \"Value of the day d/m/y (ex: \\\"11/03/2000\\\")\",\n                    \"value\": \"$PARAM_1$\",\n                    \"type\": \"string\",\n                    \"optional\": false\n                }\n            ],\n            \"variables\": [\n                {\n                    \"name\": \"Day\",\n                    \"description\": \"Value of the day d/m/y (ex: \\\"11/03/2000\\\")\",\n                    \"value\": \"$1$\",\n                    \"type\": \"string\"\n                }\n            ]\n        }\n    },\n    \"reaction\": [\n        {\n            \"parameters\": [\n                {\n                    \"name\": \"Webhook URL\",\n                    \"value\": \"adz\",\n                    \"parameter_name\": \"$PARAM_1$\"\n                },\n                {\n                    \"name\": \"Message\",\n                    \"value\": \"test\",\n                    \"parameter_name\": \"$PARAM_2$\"\n                }\n            ],\n            \"reaction\": {\n                \"name\": \"Post a message (Discord webhook)\",\n                \"description\": \"A bot send a custom message a discord's channel using webhooks\",\n                \"depends_on\": null,\n                \"id\": 5,\n                \"parameters\": [\n                    {\n                        \"name\": \"Webhook URL\",\n                        \"value\": \"$PARAM_1$\",\n                        \"type\": \"string\"\n                    },\n                    {\n                        \"name\": \"Message\",\n                        \"value\": \"$PARAM_2$\",\n                        \"type\": \"string\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"user_id\": \"5083388e6f5f826a14ba8d93020131e6\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/area",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"area"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AREA List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"5083388e6f5f826a14ba8d93020131e6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/area/list",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"area",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Area",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"area_id\": \"5\",\n    \"user_id\": \"5083388e6f5f826a14ba8d93020131e6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/area/delete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"area",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Linked Auth list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"5083388e6f5f826a14ba8d93020131e6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/list?user_id=5083388e6f5f826a14ba8d93020131e6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"list"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "5083388e6f5f826a14ba8d93020131e6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unlink Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/unlink?id=1&uuid=5083388e6f5f826a14ba8d93020131e6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"unlink"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "uuid",
+							"value": "5083388e6f5f826a14ba8d93020131e6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable Area",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"area_id\": \"6\",\n    \"user_id\": \"5083388e6f5f826a14ba8d93020131e6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/area/update_enable",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"area",
+						"update_enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "About JSON",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/about.json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"about.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger all Area",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/debug/triggers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"debug",
+						"triggers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

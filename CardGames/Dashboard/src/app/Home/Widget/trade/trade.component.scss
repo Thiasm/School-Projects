@@ -1,0 +1,122 @@
+.handle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #ccc;
+    cursor: move;
+    width: 24px;
+    height: 24px;
+}
+
+.cross {
+    position: absolute;
+    top: 5px;
+    right: 240px;
+    color: rgba(255, 0, 0, 0.473);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.edit {
+    position: absolute;
+    top: 240px;
+    right: 50px;
+    color: rgba(16, 28, 59, 0.473);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.reload {
+    position: absolute;
+    top: 240px;
+    right: 10px;
+    color: rgba(16, 28, 59, 0.473);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+  
+  $color1: #C8DAE6;
+  $color2: rgb(76, 134, 131);
+  $color3: #B8B8B8;
+  $color4: #FFCD41;
+  $color5: #2092A9;
+  
+  .trade-card {
+      position: absolute;
+      border-radius: 20px;
+      width: 270px;
+      height: 270px;
+      background-color: $color2;
+      box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+      
+      h1 {
+          position: absolute;
+          font-family: 'Lato', sans-serif;
+          font-weight:300;
+          font-size:60px;
+          color: $color3;
+          bottom: 30px;
+          left: -150px;
+          transform: translateX(150px);
+      }
+      
+      h2 {
+        position: absolute;
+        font-family: 'Lato', sans-serif;
+        font-weight:300;
+        font-size: 35px;
+        color: lighten($color3, 5%);
+        top: 40px;
+        left: -130px;
+        transform: translateX(150px);
+    }
+
+      p {
+          position: absolute;
+          font-family: 'Lato', sans-serif;
+          font-weight: 300;
+          font-size: 28px;
+          color: lighten($color3, 10%);
+          bottom: 0;
+          left: 30px;
+      }
+  }
+
+  @keyframes uparrow {
+    0% { -webkit-transform: translateY(0); opacity: 0.4 }
+    100% { -webkit-transform: translateY(-0.4em); opacity: 0.9 }
+  }
+
+  @keyframes downarrow {
+    0% { -webkit-transform: translateY(0); opacity: 0.4 }
+    100% { -webkit-transform: translateY(0.4em); opacity: 0.9 }
+  }
+  
+  .arrow {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 2em;
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 180px;
+    height: 0;
+    opacity: 0.4;
+    text-indent: -9999px;
+    transform-origin: 50% 50%;
+    width:0;
+  }
+  .up {
+    animation: uparrow 0.6s infinite alternate ease-in-out;
+    border-bottom:2em solid #0c6627;
+  }
+  .down {
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+    border-top:2em solid #a72121;
+  }
+  

@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Edit Widget</h1>
+<div mat-dialog-content>
+  <p>Select a Playlist</p>
+  <mat-form-field>
+    <mat-label>Playlist</mat-label>
+    <mat-select (selectionChange)="changeSelect($event.value)">
+        <mat-option value="Top 50-France">Top France</mat-option>
+        <mat-option value="Top 50-World">Top World</mat-option>
+        <mat-option value="Top Viral-France">Top Viral France</mat-option>
+        <mat-option value="Top Viral-World">Top Viral World</mat-option>
+      </mat-select>
+  </mat-form-field>
+</div>
+<div style="margin-left: 65px;" mat-dialog-actions>
+    <button mat-flat-button color="primary" [mat-dialog-close]="data.selection" cdkFocusInitial>Apply</button>
+</div>

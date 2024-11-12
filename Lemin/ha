@@ -1,0 +1,18 @@
+##ok
+30
+##start
+start 1 2
+##end
+end 9 2
+un 2 2
+deux 3 3
+trois 4 4
+quatre 5 5
+cinq 5 4
+start-un
+un-deux
+deux-trois
+trois-quatre
+huit 99 99
+quatre-huit
+huit-end

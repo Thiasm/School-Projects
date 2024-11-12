@@ -1,0 +1,65 @@
+@mixin vertical-align($position) {
+    position:$position;
+    top: 45%;
+    transform: translateY(-50%);
+}
+  
+@mixin all-transition($time) {
+    transition: all $time;
+    -webkit-transition: all $time;
+}
+
+.menu {
+    background: #efefef;
+    width: 400px;
+    height: 100%;
+
+    padding-left: 50px;
+    position: fixed;
+    left: -350px;
+    
+    box-shadow: 3px 0px 10px 0px rgba(0,0,0,0.2);
+    color: #222;
+    
+    @include all-transition(0.5s);
+    
+    &:hover, &:focus {
+        transform: translate3d(350px, 0, 0);
+    }
+
+    .title {
+        @include vertical-align(absolute);
+        transform: rotate(270deg);
+        right: 5px;
+        font-weight: 800;
+        font-size: 25px;
+    }
+    
+    .nav {
+        @include vertical-align(absolute);
+        height: 100%;
+        margin-left: 60px;
+        margin-top: 60px;
+        overflow: scroll;
+        li {
+            padding-bottom: 30px;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.pop{
+    height: 50px;
+    width: 40%;
+    margin-left: 20px;
+    border: 1px solid saddlebrown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

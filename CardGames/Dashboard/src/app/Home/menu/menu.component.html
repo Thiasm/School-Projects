@@ -1,0 +1,16 @@
+<div class="menu">
+    <div class="title">WIDGET</div>
+    <ul class="nav">
+        <li> <img src='../../assets/weather-logo.png' (click)="initWidget('Weather')">Weather Day</li>
+        <li> <img src="../../assets/weather-logo.png" (click)="initWidget('WeatherWeek')">Weather Week</li>
+        <li> <img src="../../assets/trade-logo.png" (click)="initWidget('Trade')">Trade Change</li>
+        <li> <img src="../../assets/trade-logo.png" (click)="initWidget('TradeMoney')">Trade Money</li>
+        <li> <img src="../../assets/spotify-logo.png" (click)="initWidget('Spotify')">Spotify Top Song</li>
+        <li> <img src="../../assets/spotify-logo.png" (click)="initWidget('SpotifyArtist')">Spotify Top Artist</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<app-widget [List]="List"></app-widget>

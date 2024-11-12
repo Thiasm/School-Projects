@@ -1,0 +1,124 @@
+.handle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #ccc;
+    cursor: move;
+    width: 24px;
+    height: 24px;
+}
+
+.cross {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: rgba(255, 0, 0, 0.473);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.edit {
+    position: absolute;
+    bottom: 5px;
+    right: 50px;
+    color: #ccc;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.reload {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: #ccc;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+  
+  $color1: #C8DAE6;
+  $color2: rgb(32, 32, 32);
+  $color3: #104913;
+  $color4: #FFCD41;
+  $color5: #2092A9;
+  
+  .spotify-card {
+      margin:  20px 5px;
+      border-radius: 20px;
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background-color: $color2;
+      box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+      
+      h1 {
+        position: absolute;
+        font-family: 'Lato', sans-serif;
+        font-weight:600;
+        font-size:50px;
+        color: $color3;
+        top: -35px;
+        left: -60px;
+        transform: translateX(150px);
+    }
+    
+    h2 {
+        position: relative;
+        font-family: 'Lato', sans-serif;
+        font-weight:500;
+        font-size: 20px;
+        color: #ccc;
+        top: 80px;
+        left: -70px;
+        transform: translateX(150px);
+  }
+
+    p {
+        position: absolute;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-size: 25px;
+        color: $color3;
+        bottom: -10px;
+        left: 120px;
+    }
+      
+  }
+
+  @keyframes uparrow {
+    0% { -webkit-transform: translateY(0); opacity: 0.4 }
+    100% { -webkit-transform: translateY(-0.4em); opacity: 0.9 }
+  }
+
+  @keyframes downarrow {
+    0% { -webkit-transform: translateY(0); opacity: 0.4 }
+    100% { -webkit-transform: translateY(0.4em); opacity: 0.9 }
+  }
+  
+  .arrow {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 2em;
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    height: 0;
+    opacity: 0.4;
+    text-indent: -9999px;
+    transform-origin: 50% 50%;
+    width:0;
+  }
+  .up {
+    animation: uparrow 0.6s infinite alternate ease-in-out;
+    border-bottom:2em solid #0c6627;
+  }
+  .down {
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+    border-top:2em solid #a72121;
+  }
+  

@@ -1,0 +1,16 @@
+[requires]
+bzip2/1.0.6@conan/stable
+zlib/1.2.11@conan/stable
+boost_bind/1.69.0@bincrafters/stable
+boost_asio/1.69.0@bincrafters/stable
+sfml/2.5.1@bincrafters/stable
+
+[options]
+boost:shared=True
+sfml:graphics=True
+sfml:window=True
+sfml:audio=True
+sfml:network=True
+
+[generators]
+cmake

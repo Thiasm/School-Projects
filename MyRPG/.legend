@@ -1,0 +1,7 @@
+##This file contain a description of what each number represent in the game binary
+0 = empty place
+1 = walls
+2 = doors
+3 = pnj's
+5 = mood squares
+6 = bosses

@@ -1,0 +1,76 @@
+version: '3'
+services:
+  client_web:
+    build: './front'
+    ports:
+      - "8081:5000"
+    networks:
+      - area-tier
+    depends_on:
+      - client_mobile
+      - server
+    environment:
+      APP_ENV: 'production'
+      REACT_APP_API_PORT: ${API_PORT}
+      REACT_APP_API_HOST: ${API_HOST}
+    volumes:
+      - apk-data:/mobile_app/
+    restart: on-failure
+
+  client_mobile:
+    build: './mobile'
+    environment:
+      SERVER_IP: ${SERVER_IP}
+      API_PORT: ${API_PORT}
+    volumes:
+      - apk-data:/mobile_app/
+    restart: on-failure
+
+  server:
+    build: './api'
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    networks:
+      - area-tier
+    depends_on:
+      - db
+    links: 
+      - db
+    environment:
+      APP_ENV: 'production'
+      API_PORT: ${API_PORT}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DB: ${DB_DB}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    restart: on-failure
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}:3306
+    networks:
+      - area-tier
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./database/db.sql:/docker-entrypoint-initdb.d/init.sql:rw
+    restart: on-failure
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links: 
+      - db
+    ports:
+      - "8181:80"
+    networks:
+      - area-tier
+    restart: on-failure
+
+networks:
+  area-tier:
+
+volumes:
+  apk-data:
+  db-data:
+    driver: local

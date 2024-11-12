@@ -1,0 +1,60 @@
+default:
+  image: node:lts-alpine
+
+stages:
+  - build
+  - test
+
+build:api:
+  stage: build
+  cache:
+    key: api-node-modules
+    paths:
+      - api/node_modules/
+    policy: push
+  script:
+    - cd api
+    - npm i
+
+build:front:
+  stage: build
+  cache:
+    key: front-node-modules
+    paths:
+      - front/node_modules/
+    policy: push
+  script:
+    - cd front
+    - npm i
+    - npm run build
+
+build:docker-compose:
+  stage: build
+  image: docker/compose:latest
+  only:
+  - master
+  services:
+    - docker:dind
+  script:
+    - docker-compose build
+
+test:front:
+  stage: test
+  needs: ["build:front"]
+  cache:
+    key: front-node-modules
+    paths:
+      - front/node_modules/
+    policy: pull
+  script:
+    - cd front
+    - npm run test
+
+test:mobile:
+  stage: test
+  image: cirrusci/flutter:1.22.6
+  script:
+    - cd mobile
+    - flutter pub get
+    - flutter clean
+    - flutter test

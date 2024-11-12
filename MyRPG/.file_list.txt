@@ -1,0 +1,66 @@
+## RPG File Checker
+## Do not remove this file nor the assets folder
+## or the game won't start
+## Sprites
+assets/attack/earth_attack.png
+assets/attack/explosion_attack.png
+assets/attack/fire_attack.png
+assets/attack/ice_attack.png
+assets/attack/light_attack.png
+assets/attack/normal_attack.png
+assets/attack/wind_attack.png
+assets/classes/archer_m.png
+assets/classes/archer_w.png
+assets/classes/paladin_m.png
+assets/classes/paladin_w.png
+assets/classes/select_class.png
+assets/classes/warrior_m.png
+assets/classes/wizard_m.png
+assets/classes/wizard_w.png
+assets/item/inventory.png
+assets/item/inventory_fast.png
+assets/item/item.png
+assets/menu/howtoplay.png
+assets/menu/logo.png
+assets/menu/menu_background.png
+assets/monster/boss.png
+assets/monster/Evilking.png
+assets/monster/Kerberos.png
+assets/monster/Lamia.png
+assets/monster/monster4.png
+assets/monster/Ogre.png
+assets/player/boy.png
+assets/player/girl.png
+assets/pnj/dialogue.png
+assets/pnj/girl1.png
+assets/pnj/girl2.png
+assets/pnj/girl3.png
+assets/pnj/girl4.png
+assets/pnj/girl5.png
+assets/pnj/hunter_mathias.png
+assets/pnj/king_dom.png
+assets/pnj/pnj1.png
+assets/pnj/pnj2.png
+assets/pnj/pnj3.png
+assets/pnj/pnj4.png
+assets/pnj/pnj5.png
+assets/pnj/sage_anton.png
+assets/pnj/sultan_maz.png
+assets/trash/female.png
+assets/trash/male.png
+assets/trash/parch.png
+assets/world/start.png
+## Font
+assets/menu/game_font.otf
+## Sound
+assets/sounds/bow_sound.ogg
+assets/sounds/click_sound.ogg
+assets/sounds/damage_sound.ogg
+assets/sounds/Epic.ogg
+assets/sounds/explosion_sound.ogg
+assets/sounds/game_music.ogg
+assets/sounds/ice_sound.ogg
+assets/sounds/menu_music.ogg
+assets/sounds/slash_sound.ogg
+assets/sounds/thunder_sound.ogg
+assets/sounds/step.wav

@@ -1,0 +1,7 @@
+logfile
+
+node_modules/
+uploads/
+.eslintrc.js
+yarn.lock
+package-lock.json

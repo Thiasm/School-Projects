@@ -1,0 +1,23 @@
+version: '3'
+services:
+  dashboard:
+    build:
+      context: Dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    restart: always
+    networks:
+      - client-tier
+
+  server:
+    build:
+      context: server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - client-tier
+
+networks:
+  client-tier:

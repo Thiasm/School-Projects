@@ -1,0 +1,32 @@
+<div class="example-boundary">
+	<ul style="list-style-type: none;">
+		<li
+			*ngFor="let widget of List"
+			[ngSwitch]="widget.type">
+
+			<ng-template ngSwitchCase="Weather">
+				<app-weather [id]="widget.id" (removeComponent)="removeWidget($event)"></app-weather>
+			</ng-template>
+			
+			<ng-template ngSwitchCase="WeatherWeek">
+				<app-weather-week [id]="widget.id" (removeComponent)="removeWidget($event)"></app-weather-week>
+	    	</ng-template>
+		
+			<ng-template ngSwitchCase="Trade">
+				<app-trade [id]="widget.id" (removeComponent)="removeWidget($event)"></app-trade>
+			</ng-template>
+
+			<ng-template ngSwitchCase="TradeMoney">
+				<app-trade-money [id]="widget.id" (removeComponent)="removeWidget($event)"></app-trade-money>
+			</ng-template>
+
+			<ng-template ngSwitchCase="Spotify">
+				<app-spotify [id]="widget.id" (removeComponent)="removeWidget($event)"></app-spotify>
+			</ng-template>
+			
+			<ng-template ngSwitchCase="SpotifyArtist">
+				<app-spotify-artist [id]="widget.id" (removeComponent)="removeWidget($event)"></app-spotify-artist>
+	    	</ng-template>
+		</li>
+	</ul>
+</div>
